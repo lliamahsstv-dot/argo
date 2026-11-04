@@ -13,382 +13,212 @@
             --bg-color: #f4f7f5;
             --card-bg: #ffffff;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .cart-icon-btn {
-            background: #ff9800;
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cart-icon-btn:hover {
-            background: #e65100;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.6)), url('https://unsplash.com') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 5rem 1rem;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-btn {
-            background-color: #ff9800;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: #e65100;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 200px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-weight: bold;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #111;
-        }
-
-        .product-desc {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-        }
-
-        .product-price {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .buy-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .buy-btn:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .about {
-            background-color: white;
-            padding: 3rem 1rem;
-            margin-top: 3rem;
-            border-radius: 8px;
-        }
-
-        .contact-section {
-            margin-top: 3rem;
-            background-color: #e8f5e9;
-            padding: 3rem 1rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #1b5e20;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-
-        /* Модальные окна */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .submit-btn {
-            background-color: #ff9800;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 0.75rem;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        .submit-btn:hover {
-            background-color: #e65100;
-        }
-
-        /* Элементы корзины */
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-item-info h4 {
-            font-size: 1rem;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .qty-btn {
-            background: #e0e0e0;
-            border: none;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-
-        .qty-btn:hover {
-            background: #ccc;
-        }
-
-        .remove-btn {
-            background: none;
-            border: none;
-            color: #d32f2f;
-            cursor: pointer;
-            margin-left: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .cart-total {
-            text-align: right;
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin: 1.5rem 0;
-            color: var(--primary-color);
-        }
-
-        .empty-cart-text {
-            text-align: center;
-            color: #777;
-            padding: 2rem 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        header { background-color: var(--primary-color); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        nav ul { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+        .cart-icon-btn { background: #ff9800; border: none; color: white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; }
+        .cart-icon-btn:hover { background: #e65100; }
+        .hero { background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.6)), url('https://unsplash.com') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 1rem; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
+        .cta-btn { background-color: #ff9800; color: white; padding: 0.75rem 2rem; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; text-decoration: none; transition: background 0.3s; }
+        .cta-btn:hover { background-color: #e65100; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .section-title { text-align: center; margin-bottom: 2rem; color: var(--primary-color); }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-img { width: 100%; height: 180px; background-color: #e8f5e9; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-weight: bold; font-size: 3rem; border-bottom: 1px solid #eee; }
+        .product-info { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: #111; }
+        .product-desc { font-size: 0.9rem; color: #666; margin-bottom: 1rem; flex-grow: 1; }
+        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .product-price { font-size: 1.25rem; font-weight: bold; color: var(--primary-color); }
+        .buy-btn { background-color: var(--primary-color); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+        .about { background-color: white; padding: 3rem 1rem; margin-top: 3rem; border-radius: 8px; }
+        .contact-section { margin-top: 3rem; background-color: #e8f5e9; padding: 3rem 1rem; border-radius: 8px; text-align: center; }
+        footer { background-color: #1b5e20; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.9rem; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 2000; }
+        .modal-content { background: white; padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-group input { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+        .submit-btn { background-color: #ff9800; color: white; border: none; width: 100%; padding: 0.75rem; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 1rem; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+        .qty-btn { background: #e0e0e0; border: none; width: 25px; height: 25px; cursor: pointer; font-weight: bold; border-radius: 4px; }
+        .remove-btn { background: none; border: none; color: #d32f2f; cursor: pointer; margin-left: 0.5rem; }
+        .cart-total { text-align: right; font-size: 1.25rem; font-weight: bold; margin: 1.5rem 0; color: var(--primary-color); }
+        .empty-cart-text { text-align: center; color: #777; padding: 2rem 0; }
     </style>
 </head>
 <body>
-
     <header>
         <div class="header-container">
-            <div class="logo">
-                <h1>АРГО Онлайн</h1>
-            </div>
+            <div class="logo"><h1>АРГО Онлайн</h1></div>
             <nav>
                 <ul>
                     <li><a href="#products">Каталог</a></li>
                     <li><a href="#about">О нас</a></li>
                     <li><a href="#contacts">Контакты</a></li>
-                    <li>
-                        <button class="cart-icon-btn" onclick="openCartModal()">
-                            🛒 Корзина (<span id="cart-count">0</span>)
-                        </button>
-                    </li>
+                    <li><button class="cart-icon-btn" onclick="openCartModal()">🛒 Корзина (<span id="cart-count">0</span>)</button></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <section class="hero">
         <h2>Натуральная продукция АРГО</h2>
-        <p>Заботьтесь о своем здоровье и красоте с помощью проверенных временем сибирских и отечественных разработок.</p>
+        <p>Заботьтесь о своем здоровье и красоте с помощью проверенных временем отечественных разработок.</p>
         <a href="#products" class="cta-btn">Перейти в каталог</a>
     </section>
-
     <div class="container">
         <section id="products">
             <h2 class="section-title">Популярные товары</h2>
-            <div class="products-grid">
-                
-                <!-- Товар 1 -->
-                <div class="product-card">
+            <div id="products-grid" class="products-grid"></div>
+        </section>
+        <section id="about" class="about">
+            <h2 class="section-title">О компании АРГО</h2>
+            <p>Потребительское общество АРГО предлагает продукцию для здоровья, красоты и экологического быта с 1996 года.</p>
+        </section>
+        <section id="contacts" class="contact-section">
+            <h2 class="section-title">Связаться с нами</h2>
+            <p style="margin: 1rem 0; font-weight: bold;">Телефон / WhatsApp: +7 (999) 123-45-67</p>
+        </section>
+    </div>
+    <footer><p>&copy; 2026 АРГО Онлайн — Сайт независимого участника АРГО.</p></footer>
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCartModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Ваша корзина</h3>
+            
+            <!-- Сюда скрипт вставит товары корзины -->
+            <div id="cart-items-container"></div>
+            
+            <div id="cart-total-price" class="cart-total">Итого: 0 ₽</div>
+            <form id="orderForm" onsubmit="handleOrderSubmit(event)" style="display: none;">
+                <h4 style="margin: 1rem 0 0.5rem 0;">Данные для доставки:</h4>
+                <div class="form-group"><label for="userName">Ваше имя</label><input type="text" id="userName" required placeholder="Иван Иванов"></div>
+                <div class="form-group"><label for="userPhone">Телефон</label><input type="tel" id="userPhone" required placeholder="+7 (999) 123-45-67"></div>
+                <button type="submit" class="submit-btn">Оформить заказ через WhatsApp</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // ==========================================
+        // НАСТРОЙКИ: УКАЖИТЕ СВОЙ НОМЕР БЕЗ ЗНАКА "+"
+        // ==========================================
+        const WHATSAPP_NUMBER = "79991234567"; 
+
+        const PRODUCTS_DATABASE = [
+            { id: 1, icon: "🌿", title: "Литовит-М (порошок)", desc: "Природный энтеросорбент на основе цеолита. Нормализует минеральный обмен и выводит токсины.", price: 1250 },
+            { id: 2, icon: "💧", title: "Рициниол Базовый", desc: "Эмульсия для ухода за кожей и слизистыми. Обладает защитным действием.", price: 540 },
+            { id: 3, icon: "📍", title: "Коврик Ляпко (малый)", desc: "Разноигольчатый аппликатор для снятия болей в спине и мышцах.", price: 2900 },
+            { id: 4, icon: "🌲", title: "Флорента (концентрат)", desc: "Экстракт зелени пихты сибирской. Мощный адаптоген для иммунитета.", price: 860 }
+        ];
+
+        let cart = [];
+
+        function renderCatalog() {
+            const grid = document.getElementById('products-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            PRODUCTS_DATABASE.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
+                card.innerHTML = `
+                    <div class="product-img">${product.icon}</div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-desc">${product.desc}</p>
+                        <div class="product-meta">
+                            <span class="product-price">${product.price.toLocaleString()} ₽</span>
+                            <button class="buy-btn" onclick="addToCart('${product.title}', ${product.price})">В корзину</button>
+                        </div>
+                    </div>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) { existingItem.quantity += 1; } 
+            else { cart.push({ name, price, quantity: 1 }); }
+            updateCartUI();
+            alert(`Товар "${name}" добавлен в корзину!`);
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+            const container = document.getElementById('cart-items-container');
+            const orderForm = document.getElementById('orderForm');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart-text">Корзина пока пуста</p>';
+                document.getElementById('cart-total-price').innerText = 'Итого: 0 ₽';
+                orderForm.style.display = 'none';
+                return;
+            }
+
+            let totalPrice = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <div class="cart-item-info"><h4>${item.name}</h4><small>${item.price} ₽</small></div>
+                    <div class="cart-item-actions">
+                        <button class="qty-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                        <button class="remove-btn" onclick="removeItem(${index})">❌</button>
+                    </div>`;
+                container.appendChild(itemElement);
+            });
+            document.getElementById('cart-total-price').innerText = `Итого: ${totalPrice.toLocaleString()} ₽`;
+            orderForm.style.display = 'block';
+        }
+
+        function changeQuantity(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) { cart.splice(index, 1); }
+            updateCartUI();
+        }
+
+        function removeItem(index) { cart.splice(index, 1); updateCartUI(); }
+        function openCartModal() { document.getElementById('cartModal').style.display = 'flex'; updateCartUI(); }
+        function closeCartModal() { document.getElementById('cartModal').style.display = 'none'; }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('cartModal');
+            if (event.target === modal) closeCartModal();
+        }
+
+        function handleOrderSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            let itemsText = ''; let total = 0;
+            
+            cart.forEach((item, i) => {
+                const sum = item.price * item.quantity;
+                total += sum;
+                itemsText += `${i + 1}. ${item.name} — ${item.quantity} шт. (${sum} ₽)\n`;
+            });
+
+            const message = `Здравствуйте! Новый заказ АРГО:\n\nПокупатель: ${name}\nТелефон: ${phone}\n\nТовары:\n${itemsText}\nИтого: ${total} ₽`;
+            window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            cart = []; updateCartUI(); closeCartModal();
+        }
+
+        window.onload = function() { renderCatalog(); };
+    </script>
+</body>
+</html>
